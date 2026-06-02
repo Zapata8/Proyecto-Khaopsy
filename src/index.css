@@ -1,0 +1,179 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.encabezado-seccion {
+  background-image: url("./assets/header-bg.png");
+  background-repeat: repeat-x;
+  background-size: cover;
+  background-position: center;
+  min-height: 55px;
+  display: flex;
+  margin-top: 1rem;
+}
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+.encabezado-seccion {
+  background-image: url("./assets/header-bg.png");
+  background-repeat: repeat-x;
+  background-size: cover;
+  background-position: center;
+  min-height: 55px;
+  display: flex;
+  margin-top: 1rem;
+}
+.boton-teaser-superpuesto {
+  position: absolute;
+  bottom: 10px;
+  right: 140px;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+}
+
+.miembro-foto {
+  max-width: 250px;
+  border-radius: 4px;
+  transition: transform 0.35s ease-in-out;
+  display: block;
+  margin: 0 auto;
+}
+
+.miembro-foto:hover {
+  transform: scale(1.15) rotate(3deg);
+}
+.seccion-tienda {
+  background-image: url("./assets/donde.bg.png");
+  background-repeat: repeat;
+  background-size: 900px;
+  background-position: center;
+  padding-top: 0.5px;
+  padding-bottom: 185px;
+}
+
+.tarjeta-producto {
+  background-color: #cfcfcf;
+  border: 1px solid #aaaaaa;
+  width: 280px;           
+  margin: 0 auto;
+}
+
+.imagen-producto {
+  max-height: 150px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.zona-imagen-producto:hover .imagen-producto {
+  transform: scale(1.25);
+}
+.zona-imagen-producto:hover .imagen-producto {
+  transform: scale(1.25);
+}
+
+.texto-producto {
+  
+  padding: 10px 5px;
+}
+
+
+.descripcion-producto {
+  font-size: 1.1rem;
+  
+}
+.boton-carrito {
+  background-color: rgb(207, 204, 204);
+  border: none;
+  transition: transform 0.2s ease;
+}
+
+.boton-carrito:hover {
+  transform: scale(1.2);
+}
+.seccion-pie {
+  background-image: url("./assets/header-bg.png");
+  background-repeat: repeat-x;
+  background-size: contain;
+}
+
+.titulo-pie {
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+.circulo-icono-pie {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.imagen-icono-pie {
+  
+  transition: transform 0.25s ease, filter 0.25s ease;
+}

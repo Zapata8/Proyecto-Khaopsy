@@ -1,0 +1,114 @@
+
+
+body {
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.encabezado-seccion {
+  background-image: url("./assets/header-bg.png");
+  background-repeat: repeat-x;
+  background-size: cover;
+  background-position: center;
+  min-height: 55px;
+  display: flex;
+  margin-top: 2rem;
+}
+
+.titulo-principal {
+  letter-spacing: 7px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.barra {
+  
+  margin-bottom: 20px;
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 220px 20px;
+}
+
+.franja-comic {
+  
+  color: #ffffff;
+  padding: 10px 16px;
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.etiqueta {
+  
+  padding: 6px 40px;
+  margin: 0 auto 22px;
+  position: relative;
+  text-align: center;
+}
+
+.contenedor-imagen-idea {
+  width: fit-content;
+  margin: 90px auto;
+}
+
+.imagen-idea {
+  width: 300px;
+}
+
+.texto-idea {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.subtitulo-personajes{
+  margin-left: 41%;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
