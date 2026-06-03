@@ -17,6 +17,8 @@ import habitacionExortacion from "./assets/habitacion-exortacion.png";
 import NavBar from "./components/NavBar.jsx";
 import SeccionIdea from "./components/SeccionIdea.jsx";
 import CarruselPersonajes from "./components/CarruselPersonajes.jsx";
+import Comic from "./components/Comicc.jsx";
+import Comicc from "./components/Comicc";
 import EscenariosCards from "./components/Escenarios.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
@@ -29,9 +31,10 @@ import SectionStore from "./components/SectionStore.jsx";
 import Footer from "./components/Footer.jsx";
 
 
-export function Home() {
+
+export default function Home() {
   return (
-    <div className="contenedor bg-white m-auto p-4" style={{ maxWidth: "1200px" }}>
+    <div className="contenedor " >
       <header className="titulo-principal text-center fs-2">KHAOPSY</header>
 
       <NavBar logoPequeno={logoPequeno} />
@@ -42,7 +45,7 @@ export function Home() {
           backgroundImage: `url(${fondoNegro})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: 260,
+          height: 500,
         }}
       />
 
@@ -60,6 +63,8 @@ export function Home() {
 
       
       />
+      
+      <Comic />
 
       <CarruselPersonajes
         personajeKael={personajeKael}
@@ -75,7 +80,7 @@ export function Home() {
         habitacionExortacion={habitacionExortacion}
       />
 
- <div className="bg-light">
+ <div className="">
       <TeaserSection />
       <MembersSection />
       <MemberCard />

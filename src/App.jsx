@@ -1,10 +1,16 @@
-import { Home } from "./Home"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Home";
+import Capitulo from "./components/Capitulo";
 
-
-export const App = () => {
+function App() {
   return (
-    <>
-      <Home/>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/capitulo/:id" element={<Capitulo />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
+
+export default App;

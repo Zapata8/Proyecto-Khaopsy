@@ -14,7 +14,7 @@ function SectionStore() {
       <div className="container mt-4 pb-4">
         <div className="row justify-content-center g-4">
           
-          <div className="col-12 col-md-4 d-flex justify-content-center">
+          <div className="col-12 col-md-4 d-flex   justify-content-center dark">
             <ProductCard
               title="Buzo KHAOPSY"
               description="Buzo de algodón con el logo oficial de KHAOPSY."

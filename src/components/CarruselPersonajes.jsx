@@ -11,13 +11,11 @@ export default function CarruselPersonajes({
   return (
     <>
       <div className="encabezado-seccion d-flex h2 justify-content-center  text-white text-center py-1">
-        COMIC
+        PERSONAJES
       </div>
 
-      <section className="seccion-personajes p-3 mb-4 bg-black text-white rounded">
-        <div className="subtitulo-personajes border border-danger text-black bg-white fw-bolder d-inline-block px-5 py-1 mb-4">
-          PERSONAJES
-        </div>
+      <section className="seccion-personajes p-3 mb-4 bg-black  text-white rounded">
+        
 
         <div id="carruselPersonajes" className="carousel slide" data-bs-ride="false">
           <div className="carousel-inner text-center">
@@ -26,7 +24,7 @@ export default function CarruselPersonajes({
                 src={personajeKael}
                 className="d-block mx-auto rounded"
                 alt="Kael"
-                style={{ width: 260, height: 260, objectFit: "cover" }}
+                style={{ width: 450, height: 450, objectFit: "cover" }}
               />
             </div>
 
@@ -35,7 +33,7 @@ export default function CarruselPersonajes({
                 src={personajeKyle}
                 className="d-block mx-auto rounded"
                 alt="Kyle"
-                style={{ width: 260, height: 260, objectFit: "cover" }}
+                style={{ width: 450, height: 450, objectFit: "cover" }}
               />
             </div>
 
@@ -44,7 +42,7 @@ export default function CarruselPersonajes({
                 src={personajePadre}
                 className="d-block mx-auto rounded"
                 alt="Padre"
-                style={{ width: 260, height: 260, objectFit: "cover" }}
+                style={{ width: 450, height: 450, objectFit: "cover" }}
               />
             </div>
 
@@ -53,7 +51,7 @@ export default function CarruselPersonajes({
                 src={personajeSandy}
                 className="d-block mx-auto rounded"
                 alt="Sandy"
-                style={{ width: 260, height: 260, objectFit: "cover" }}
+           style={{ width: 450, height: 450, objectFit: "cover" }}
               />
             </div>
 
@@ -62,7 +60,7 @@ export default function CarruselPersonajes({
                 src={personajeSt}
                 className="d-block mx-auto rounded"
                 alt="ST"
-                style={{ width: 260, height: 260, objectFit: "cover" }}
+               style={{ width: 450, height: 450, objectFit: "cover" }}
               />
             </div>
           </div>

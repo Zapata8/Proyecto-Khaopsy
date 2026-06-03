@@ -1,114 +1,287 @@
-
-
 body {
-
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
-.encabezado-seccion {
-  background-image: url("./assets/header-bg.png");
-  background-repeat: repeat-x;
-  background-size: cover;
-  background-position: center;
-  min-height: 55px;
-  display: flex;
-  margin-top: 2rem;
-}
-
-.titulo-principal {
-  letter-spacing: 7px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.barra {
-  
-  margin-bottom: 20px;
-}
-
-.banner {
-  background-size: cover;
-  background-position: center;
-  padding: 220px 20px;
-}
-
-.franja-comic {
-  
-  color: #ffffff;
-  padding: 10px 16px;
-  width: 100vw;
-  margin-left: 50%;
-  transform: translateX(-50%);
-  margin-top: 40px;
-  margin-bottom: 20px;
-}
-
-.etiqueta {
-  
-  padding: 6px 40px;
-  margin: 0 auto 22px;
-  position: relative;
-  text-align: center;
-}
-
-.contenedor-imagen-idea {
-  width: fit-content;
-  margin: 90px auto;
-}
-
-.imagen-idea {
-  width: 300px;
-}
-
-.texto-idea {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.subtitulo-personajes{
-  margin-left: 41%;
+margin: 0;
+font-family: Arial, Helvetica, sans-serif;
+background-color: #000;
+color: #fff;
+min-height: 100vh;
+overflow-x: hidden;
 }
 
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+width: 100%;
+min-height: 100vh;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+* {
+  box-sizing: border-box;
   }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* Encabezados */
+.encabezado-seccion {
+background-image: url("./assets/header-bg.png");
+background-repeat: repeat-x;
+background-size: cover;
+background-position: center;
+min-height: 55px;
+display: flex;
+margin-top: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.titulo-principal {
+letter-spacing: 7px;
+font-weight: 700;
+margin-bottom: 20px;
+}
+
+/* Banner principal */
+.banner {
+background-size: cover;
+background-position: center;
+min-height: 260px;
+border-radius: 8px;
+}
+
+/* Idea */
+.contenedor-imagen-idea {
+width: fit-content;
+margin: 90px auto;
+}
+
+.imagen-idea {
+width: 300px;
+}
+
+.texto-idea {
+max-width: 600px;
+margin: 0 auto;
+}
+
+/* Personajes */
+.subtitulo-personajes {
+margin-left: 41%;
+}
+
+/* Comic */
+.capitulos {
+padding: 60px 20px;
+text-align: center;
+}
+
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
+}
+
+.card-descripcion {
+color: white;
+font-size: 14px;
+text-align: center;
+margin: 20px;
+}
+
+.card-titulo {
+color: black;
+font-size: 120%;
+}
+
+.card:hover {
+transform: translateY(-10px);
+transition: 0.3s;
+}
+
+/* Footer */
+footer {
+background: #0d1117;
+color: white;
+text-align: center;
+padding: 20px;
+margin-top: 50px;
+border-top: 1px solid #222;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+.textos {
+font-size: 22px;
+text-align: center;
+padding: 10px;
 }
 
 .card {
-  padding: 2em;
+height: auto;
+}
 }
 
-.read-the-docs {
-  color: #888;
+@media (max-width: 600px) {
+.textos {
+font-size: 18px;
+padding: 10px;
+text-align: center;
 }
 
+.card {
+height: auto;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+.banner-capitulo{
+  min-height: 80vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.overlay-capitulo{
+  background: rgba(0,0,0,.45);
+  min-height: 80vh;
+  padding: 80px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.numero-capitulo{
+  width:90px;
+  height:40px;
+  background:#8b0000;
+  color:white;
+  font-weight:bold;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:20px;
+}
+
+.overlay-capitulo h1{
+  color:#8b0000;
+  font-size:4rem;
+}
+
+.overlay-capitulo p{
+  max-width:600px;
+  font-size:1.2rem;
+}
+
+.btn-reproducir{
+  width:180px;
+  background:#8b0000;
+  color:white;
+  border:none;
+  padding:15px;
+}
+
+.lista-capitulos{
+  background:#000;
+  padding:40px;
+}
+
+.miniatura-capitulo{
+  width:100%;
+  border-radius:20px;
+  border:3px solid #8b0000;
+}
+
+
+
+
+body{
+  background:#000 !important;
+}
+
+#root{
+  background:#000 !important;
+  min-height:100vh;
+}
+
+.contenedor{
+  background:#000 !important;
+}
+
+.lista-capitulos{
+  background:#000 !important;
+}
+
+.lista-capitulos{
+  background-image:url("../src/assets/bannernegro.png");
+  background-repeat:repeat;
+  background-size:600px;
+  padding:60px 30px;
+}
+
+.lista-capitulos h2{
+  color:white;
+  font-size:3rem;
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.card{
+  background:#8b0000 !important;
+  color:white !important;
+  border:none !important;
+}
+
+.card-title{
+  color:white !important;
+  text-align:center;
+}
+
+.card-text{
+  color:white !important;
+  text-align:center;
+  font-size: 12px;
+}
+
+.btn-danger{
+  background:#b10000 !important;
+  border:none !important;
+}
+
+.seccion-rompecabezas{
+    background-color:#000;
+    color:white;
+    padding:40px 0;
+}
+
+.seccion-integrados{
+    background-color:#000;
+    color:white;
+    padding:40px 0;
+}
+
+
+.lista-capitulos {
+  padding: 50px 30px;
+  min-height: 500px;
+}
+
+.lista-capitulos h2 {
+  color: white;
+  margin-bottom: 30px;
+}
+
+.lista-capitulos a {
+  text-decoration: none;
+  color: white;
+}
+
+.miniatura-capitulo {height: 200px;
+  width: 100%;
+  justify-content: center;
+  margin-left: 60px;
+  border-radius: 10px;
+}
+.nom{
+  margin-left: 100px
+}

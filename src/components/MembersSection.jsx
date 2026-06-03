@@ -6,7 +6,7 @@ import juanSebastian from "../assets/juan-sebastian.jpg";
 function MembersSection() {
   return (
     <section id="integrantes" className="members-section">
-      <SectionHeader title="INTEGRANTES" />
+      <SectionHeader title="CREADORES" />
 
       <div className="container mt-4 members-wrapper">
         <div className="row justify-content-center">

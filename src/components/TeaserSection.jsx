@@ -5,7 +5,7 @@ import teaserImg from "../assets/teaser.jpg";
 function TeaserSection() {
   return (
     <section id="teaser">
-      <SectionHeader title="TEASER" />
+      <SectionHeader title="CORTO" />
 
       <div className="container ">
         <div className="row d-flex justify-content-center ">
