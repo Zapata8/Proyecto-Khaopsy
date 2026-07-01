@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CarritoContext } from "./context/CarritoContext";
+const carritoIcon = "/assets/carrito.png";
 
 
 import angelImg from "/assets/angel.png";
