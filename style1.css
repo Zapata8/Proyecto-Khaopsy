@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: #2f2b2a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Contenedor principal de la viñeta */
+.cont {
+    position: relative;
+    width: min(94vw, calc(88vh * 1.90));
+    height: min(88vh, calc(94vw / 1.90));
+    background-image: url("./img/fondo viñeta.svg");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+/* Botones laterales */
+.btn-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(190, 0, 0, 0.9);
+    color: white;
+    font-size: 38px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 50;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+}
+
+.btn-nav:hover {
+    background: red;
+    transform: translateY(-50%) scale(1.06);
+}
+
+.btn-siguiente {
+    right: 3%;
+}
+
+/* Botón de audio con imagen */
+.btn-audio-img {
+    position: absolute;
+    right: 7%;
+    bottom: 4%;
+    width: 72px;
+    height: 72px;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    z-index: 80;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.7));
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.btn-audio-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.btn-audio-img:hover {
+    transform: scale(1.12);
+    filter: drop-shadow(0 0 14px rgba(255, 0, 0, 0.9));
+}
+
+/* Sol */
+#sol {
+    position: absolute;
+    top: 8.5%;
+    left: 25%;
+    width: 6%;
+    cursor: pointer;
+    z-index: 4;
+}
+
+/* Pareja / Kael */
+#kael {
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    width: 22%;
+    z-index: 10;
+    cursor: pointer;
+}
+
+/* Cuadro de la pared */
+#cuadro {
+    position: absolute;
+    width: 5%;
+    top: 21.5%;
+    left: 56.5%;
+    z-index: 8;
+    cursor: pointer;
+}
+
+/* Torre / perchero */
+#torre {
+    position: absolute;
+    top: 10%;
+    left: 60%;
+    width: 9%;
+    z-index: 9;
+    cursor: pointer;
+}
+
+/* Chaqueta */
+#chaqueta {
+    position: absolute;
+    top: 21%;
+    left: 75%;
+    width: 13%;
+    z-index: 12;
+    cursor: pointer;
+}
+
+/* Para que el SVG del cuadro se adapte */
+#cuadro svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Objetos que se pueden tocar */
+.interactivo {
+    cursor: pointer;
+    animation: resplandor 1.8s infinite ease-in-out;
+    filter: drop-shadow(0 0 8px rgba(255, 230, 80, 0.9));
+}
+
+/* Al pasar el mouse se agranda un poquito */
+.interactivo:hover {
+    filter: drop-shadow(0 0 18px rgba(255, 255, 120, 1));
+}
+
+/* Efecto de luz palpitante */
+@keyframes resplandor {
+    0% {
+        filter: drop-shadow(0 0 4px rgba(255, 230, 80, 0.5));
+    }
+    50% {
+        filter: drop-shadow(0 0 4px rgba(255, 230, 80, 0.5));
+    }
+
+    100% {
+        filter: drop-shadow(0 0 4px rgba(255, 230, 80, 0.5));
+    }
+}

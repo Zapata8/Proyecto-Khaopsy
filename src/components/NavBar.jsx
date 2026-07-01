@@ -1,15 +1,80 @@
-
 import React from "react";
+import patronRojo from "../assets/patron-rojo.png";
 
-export default function NavBar({ logoPequeno }) {
+function NavBar({ logoPequeno }) {
+  const irASeccion = (id) => {
+    const seccion = document.getElementById(id);
+
+    if (seccion) {
+      const alturaNavbar = 165;
+
+      const posicion =
+        seccion.getBoundingClientRect().top + window.scrollY - alturaNavbar;
+
+      window.scrollTo({
+        top: posicion,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
-    <nav className="barra encabezado-seccion d-flex align-items-center justify-content-between p-3 rounded">
-      <div className="logo-barra">
-        <img src={logoPequeno} alt="Logo pequeño" style={{ height: 40 }} />
+    <nav
+      className="navbar-khaopsy"
+      style={{
+        "--fondo-navbar": `url(${patronRojo})`,
+      }}
+    >
+      <div className="navbar-logo">
+        <img src={logoPequeno} alt="Logo KHAOPSY" />
       </div>
 
-      <button className="btn btn-dark ">MENU</button>
-      <button className="btn btn-dark">TIENDA</button>
+      <ul className="navbar-menu">
+        <li>
+          <button onClick={() => irASeccion("nuestro-proyecto")}>
+            Nuestro proyecto
+          </button>
+        </li>
+
+     
+
+        <li>
+          <button onClick={() => irASeccion("personajes")}>
+            Personajes
+          </button>
+        </li>
+
+        <li>
+          <button onClick={() => irASeccion("escenarios")}>
+            Escenarios
+          </button>
+        </li>
+
+        <li>
+          <button onClick={() => irASeccion("teaser")}>
+           Teaser
+          </button>
+        </li>
+           <li>
+          <button onClick={() => irASeccion("comic")}>
+            Cómic
+          </button>
+        </li>
+
+        <li>
+          <button onClick={() => irASeccion("integrantes")}>
+            Miembros
+          </button>
+        </li>
+
+        <li>
+          <button onClick={() => irASeccion("tienda")}>
+            Tienda
+          </button>
+        </li>
+      </ul>
     </nav>
   );
 }
+
+export default NavBar;

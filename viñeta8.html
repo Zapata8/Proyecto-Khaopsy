@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viñeta 8</title>
+
+    <link rel="stylesheet" href="style8.css">
+
+    <!-- Librería Lottie -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container8">
+
+        <!-- Botón audio con imagen -->
+        <button class="btn-audio-img" onclick="reproducirAudio()" type="button">
+            <img src="/src/assets/boton.png" alt="Reproducir audio">
+        </button>
+
+        <!-- Audio de esta viñeta -->
+        <audio id="audioComic">
+            <source src="img/ultima.mp3" type="audio/mpeg">
+            Tu navegador no soporta audio.
+        </audio>
+
+        <!-- Fondo -->
+        <div class="fondo8">
+            <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1920 1080">
+                <rect x="-12.72" y="-16.71" width="1945.44" height="1113.43"/>
+            </svg>
+        </div>
+
+        <!-- Animación Lottie -->
+        <div id="lampara" class="interactivo"></div>
+
+    </div>
+
+    <script src="script8.js"></script>
+
+</body>
+
+</html>

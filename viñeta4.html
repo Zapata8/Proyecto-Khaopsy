@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómic digital interactivo</title>
+    <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+
+    <div class="cont">
+
+        <!-- Botón audio con imagen -->
+        <button class="btn-audio-img" onclick="reproducirAudio()" type="button">
+            <img src="/src/assets/boton.png" alt="Reproducir audio">
+        </button>
+
+        <!-- Audio principal de esta viñeta -->
+        <audio id="audioComic">
+            <source src="img/4.mp3" type="audio/mpeg">
+            Tu navegador no soporta audio.
+        </audio>
+
+        <!-- Audio de fondo iglesia -->
+        <audio id="audioFondo" loop>
+            <source src="img/iglesia.mp3" type="audio/mpeg">
+            Tu navegador no soporta audio.
+        </audio>
+
+        <!-- Animaciones Lottie con brillo suave -->
+        <div id="cruz" class="interactivo"></div>
+        <div id="padre" class="interactivo"></div>
+        <div id="micro" class="interactivo"></div>
+
+    </div>
+
+    <!-- Librería Lottie -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.13.0/lottie.min.js"></script>
+
+    <script>
+        const padre = lottie.loadAnimation({
+            container: document.getElementById('padre'),
+            renderer: 'svg',
+            loop: false,
+            autoplay: false,
+            path: 'img/dato.json'
+        });
+
+        document.getElementById('padre').addEventListener('click', function () {
+            padre.stop();
+            padre.play();
+        });
+
+        const cruz = lottie.loadAnimation({
+            container: document.getElementById('cruz'),
+            renderer: 'svg',
+            loop: false,
+            autoplay: false,
+            path: 'img/cruz.json'
+        });
+
+        document.getElementById('cruz').addEventListener('click', function () {
+            cruz.stop();
+            cruz.play();
+        });
+
+        const micro = lottie.loadAnimation({
+            container: document.getElementById('micro'),
+            renderer: 'svg',
+            loop: false,
+            autoplay: false,
+            path: 'img/micro.json'
+        });
+
+        document.getElementById('micro').addEventListener('click', function () {
+            micro.stop();
+            micro.play();
+        });
+
+        // Reproducir / pausar audio principal y audio de fondo
+        function reproducirAudio() {
+            const audioPrincipal = document.getElementById("audioComic");
+            const audioFondo = document.getElementById("audioFondo");
+
+            // Volumen del audio principal más fuerte
+            audioPrincipal.volume = 1.0;
+
+            // Volumen del audio de fondo más suave
+            audioFondo.volume = 0.22;
+
+            if (audioPrincipal.paused) {
+                audioPrincipal.play();
+                audioFondo.play();
+            } else {
+                audioPrincipal.pause();
+                audioFondo.pause();
+            }
+        }
+
+        // Volver a la viñeta anterior
+        function retroceder() {
+            window.location.href = "viñeta3.html";
+        }
+    </script>
+
+</body>
+</html>

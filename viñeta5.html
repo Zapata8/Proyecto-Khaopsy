@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viñeta del carro</title>
+    <link rel="stylesheet" href="style5.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Botón audio con imagen -->
+        <button class="btn-audio-img" onclick="reproducirAudio()" type="button">
+            <img src="/src/assets/boton.png" alt="Reproducir audio">
+        </button>
+
+        <!-- Audio -->
+        <audio id="audioComic">
+            <source src="img/5.mp3" type="audio/mpeg">
+            Tu navegador no soporta audio.
+        </audio>
+
+        <!-- Animaciones Lottie visibles desde el inicio -->
+        <div id="ojoskyle" class="interactivo"></div>
+        <div id="sandyojos" class="interactivo"></div>
+        <div id="volante" class="interactivo"></div>
+        <div id="cejas" class="interactivo"></div>
+        <div id="viento" class="interactivo"></div>
+        <div id="viento2" class="interactivo"></div>
+
+    </div>
+
+    <!-- Librería Lottie -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.13.0/lottie.min.js"></script>
+
+    <script>
+        const ojoskyleanimado = lottie.loadAnimation({
+            container: document.getElementById("ojoskyle"),
+            renderer: "svg",
+            loop: false,
+            autoplay: false,
+            path: "img/ojoskyle.json"
+        });
+
+        const sandyojosanimado = lottie.loadAnimation({
+            container: document.getElementById("sandyojos"),
+            renderer: "svg",
+            loop: false,
+            autoplay: false,
+            path: "img/sandyojos.json"
+        });
+
+        const volanteanimado = lottie.loadAnimation({
+            container: document.getElementById("volante"),
+            renderer: "svg",
+            loop: false,
+            autoplay: false,
+            path: "img/volante.json"
+        });
+
+        const cejasanimado = lottie.loadAnimation({
+            container: document.getElementById("cejas"),
+            renderer: "svg",
+            loop: false,
+            autoplay: false,
+            path: "img/cejas.json"
+        });
+
+        const vientoanimado = lottie.loadAnimation({
+            container: document.getElementById("viento"),
+            renderer: "svg",
+            loop: false,
+            autoplay: false,
+            path: "img/viento.json"
+        });
+
+        const viento2animado = lottie.loadAnimation({
+            container: document.getElementById("viento2"),
+            renderer: "svg",
+            loop: false,
+            autoplay: false,
+            path: "img/viento2.json"
+        });
+
+        function activarAnimacion(id, animacion) {
+            const elemento = document.getElementById(id);
+
+            elemento.addEventListener("click", function () {
+                animacion.stop();
+                animacion.play();
+            });
+        }
+
+        activarAnimacion("ojoskyle", ojoskyleanimado);
+        activarAnimacion("sandyojos", sandyojosanimado);
+        activarAnimacion("volante", volanteanimado);
+        activarAnimacion("cejas", cejasanimado);
+        activarAnimacion("viento", vientoanimado);
+        activarAnimacion("viento2", viento2animado);
+
+        // Reproducir audio con imagen
+   function reproducirAudio() {
+    const audio = document.getElementById("audioComic");
+
+    if (audio.paused) {
+        audio.play();
+    } else {
+        audio.pause();
+    }
+}
+
+        // Siguiente viñeta
+        function avanzar() {
+            window.location.href = "viñeta6.html";
+        }
+
+        // Viñeta anterior
+        function retroceder() {
+            window.location.href = "viñeta4.html";
+        }
+    </script>
+
+</body>
+</html>

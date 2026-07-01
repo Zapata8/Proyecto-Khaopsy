@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómic digital interactivo</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Botón audio con imagen -->
+        <button class="btn-audio-img" onclick="reproducirAudio()" type="button">
+            <img src="/src/assets/boton.png" alt="Reproducir audio">
+        </button>
+
+        <!-- Audio principal de esta viñeta -->
+        <audio id="audioComic">
+            <source src="img/2.mp3" type="audio/mpeg">
+            Tu navegador no soporta audio.
+        </audio>
+
+        <!-- Audio de fondo del carro -->
+        <audio id="audioFondo" loop>
+            <source src="img/carro.mp3" type="audio/mpeg">
+            Tu navegador no soporta audio.
+        </audio>
+
+        <!-- Animaciones Lottie -->
+        <div id="carro" class="interactivo"></div>
+        <div id="humo"></div>
+        <div id="folletos"></div>
+        <div id="nubes" class="interactivo"></div>
+
+    </div>
+
+    <!-- Librería Lottie -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.13.0/lottie.min.js"></script>
+
+    <script>
+        const carroanimado = lottie.loadAnimation({
+            container: document.getElementById("carro"),
+            renderer: "svg",
+            loop: false,
+            autoplay: false,
+            path: "img/carro.json"
+        });
+
+        const humoanimado = lottie.loadAnimation({
+            container: document.getElementById("humo"),
+            renderer: "svg",
+            loop: false,
+            autoplay: false,
+            path: "img/humo.json"
+        });
+
+        const folletosanimado = lottie.loadAnimation({
+            container: document.getElementById("folletos"),
+            renderer: "svg",
+            loop: false,
+            autoplay: false,
+            path: "img/folletos.json"
+        });
+
+        const nubesanimado = lottie.loadAnimation({
+            container: document.getElementById("nubes"),
+            renderer: "svg",
+            loop: false,
+            autoplay: false,
+            path: "img/nubes.json"
+        });
+
+        // Al tocar el carro se activa el carro, humo y folletos
+        document.getElementById("carro").addEventListener("click", function () {
+            carroanimado.stop();
+            carroanimado.play();
+
+            humoanimado.stop();
+            humoanimado.play();
+
+            folletosanimado.stop();
+            folletosanimado.play();
+        });
+
+        // Al tocar las nubes se animan
+        document.getElementById("nubes").addEventListener("click", function () {
+            nubesanimado.stop();
+            nubesanimado.play();
+        });
+
+        // Reproducir / pausar audio principal y audio de fondo
+        function reproducirAudio() {
+            const audioPrincipal = document.getElementById("audioComic");
+            const audioFondo = document.getElementById("audioFondo");
+
+            // Audio principal más fuerte
+            audioPrincipal.volume = 1.0;
+
+            // Audio de fondo más suave
+            audioFondo.volume = 0.25;
+
+            if (audioPrincipal.paused) {
+                audioPrincipal.play();
+                audioFondo.play();
+            } else {
+                audioPrincipal.pause();
+                audioFondo.pause();
+            }
+        }
+
+        // Ir a la siguiente viñeta
+        function avanzar() {
+            window.location.href = "viñeta3.html";
+        }
+
+        // Volver a la viñeta anterior
+        function retroceder() {
+            window.location.href = "viñeta1.html";
+        }
+    </script>
+
+</body>
+</html>

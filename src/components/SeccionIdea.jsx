@@ -1,31 +1,31 @@
-
 import React from "react";
+import angel from "../assets/angel.png";
 
-
-export default function SeccionIdea({ angelImg,titulo }) {
+function SeccionIdea() {
   return (
-    <section className="seccion-idea"> 
-    
-      <div className="contenedor-imagen-idea d-block p-2 text-center position-relative my-4">
-        <div className="etiqueta etiqueta-idea-superpuesta border border-danger text-black bg-white fw-bolder d-inline-block px-5 py-1 mb-3">
-         {titulo}
+    <section
+      id="nuestro-proyecto"
+      className="seccion-proyecto"
+      style={{ "--fondo-proyecto": `url(${angel})` }}
+    >
+      <div className="contenedor-textos-proyecto">
+        <div className="caja-texto-proyecto">
+          <p>
+           Las crisis religiosas han influido mucho en la historia de la humanidad, especialmente en momentos de miedo, duda y grandes cambios. En este proyecto se busca mostrar cómo las personas reaccionan cuando creen que se acerca el fin del mundo, usando como referencia las Siete Trompetas del Apocalipsis.
+
+A través de una historia visual e interactiva, el proyecto muestra cómo el miedo, las creencias y las emociones pueden cambiar la forma en que las personas piensan, actúan y enfrentan una crisis religiosa.
+
+          </p>
         </div>
 
-        <img
-          src={angelImg}
-          alt="Ángel del proyecto"
-          className="imagen-idea rounded mx-auto d-block rounded-5"
-          style={{ width: 300 }}
-        />
+        <div className="caja-texto-proyecto">
+          <p>
+            Por medio de una narrativa inmersiva, el usuario podrá seguir la historia de una familia que enfrenta los acontecimientos descritos en las profecías bíblicas, experimentando de cerca los conflictos, decisiones y desafíos que surgen en un contexto de incertidumbre. De esta manera, el proyecto no solo busca entretener, sino también generar reflexión sobre la influencia de la fe, la psicología y las creencias en el comportamiento humano frente a situaciones extremas.
+          </p>
+        </div>
       </div>
-
-      <p className="texto-idea lh-sm fs-5 text-center">
-        Desarrollar un proyecto multimedial transmedia que represente el
-        apocalipsis de una manera cruda y realista, para advertir a la
-        humanidad sobre lo que está por venir. El proyecto también pretende
-        mostrar cómo la psicología influye en las decisiones de las personas
-        en momentos de crisis religiosas.
-      </p>
     </section>
   );
 }
+
+export default SeccionIdea;

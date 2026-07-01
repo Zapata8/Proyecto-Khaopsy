@@ -1,22 +1,43 @@
-import React from "react";
+import React, { useContext } from "react";
 import cartIcon from "../assets/carrito.png";
+import { CarritoContext } from "../context/CarritoContext";
 
 function ProductCard({ title, description, price, image }) {
+  const { agregarProducto } = useContext(CarritoContext);
+
   return (
-    <div className="tarjeta-producto mb-3">
-      <div className="zona-imagen-producto d-flex justify-content-center align-items-center">
-        <img src={image} alt={title} className="imagen-producto" />
+    <article className="producto-khaopsy-card">
+      <div className="producto-imagen-area">
+        <img src={image} alt={title} />
       </div>
 
-      <div className="texto-producto px-2 py-2 text-center">
-        <p className="descripcion-producto mb-1">{description}</p>
-        <p className="precio-producto mb-0">{price}</p>
+      <div className="producto-info-area">
+        <span className="producto-categoria">
+          COLECCIONABLE
+        </span>
 
-        <button className="boton-carrito">
-          <img src={cartIcon} alt="Carrito" className="icono-carrito  object-fit-cover " style={{Width:"26px" , height:"26px"}}  />
-        </button>
+        <h3>{title}</h3>
+
+        <p>{description}</p>
+
+        <div className="producto-bottom">
+          <strong>{price}</strong>
+
+          <button
+            onClick={() =>
+              agregarProducto({
+                title,
+                description,
+                price,
+                image,
+              })
+            }
+          >
+            <img src={cartIcon} alt="Agregar al carrito" />
+          </button>
+        </div>
       </div>
-    </div>
+    </article>
   );
 }
 

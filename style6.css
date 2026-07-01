@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: #2f2b2a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Tamaño general de la viñeta */
+:root {
+    --escala-vineta: 0.82;
+    --bajar-vineta: 70px;
+}
+
+/* Contenedor principal */
+.container6 {
+    position: relative;
+    width: 1400px;
+    height: 787px;
+    overflow: hidden;
+    transform: translateY(var(--bajar-vineta)) scale(var(--escala-vineta));
+    transform-origin: center;
+}
+
+/* Fondo SVG */
+.fondo6 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1400px;
+    height: 787px;
+    z-index: 1;
+}
+
+.fondo6 svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Animación Kael */
+#kael_mosa {
+    position: absolute;
+    left: 250px;
+    top: 113px;
+    width: 400px;
+    height: 400px;
+    z-index: 10;
+}
+
+/* Animación Sandy */
+#sandy_chilletas_6 {
+    position: absolute;
+    left: 725px;
+    top: 120px;
+    width: 390px;
+    height: 390px;
+    z-index: 10;
+}
+
+/* Botón de audio con imagen */
+.btn-audio-img {
+    position: absolute;
+    right: 200px;
+    bottom: 215px;
+    width: 72px;
+    height: 72px;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    z-index: 90;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.7));
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.btn-audio-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.btn-audio-img:hover {
+    transform: scale(1.12);
+    filter: drop-shadow(0 0 14px rgba(255, 0, 0, 0.9));
+}
+
+/* Animaciones visibles quietas desde el inicio */
+.interactivo {
+    cursor: pointer;
+    animation: resplandor 1.8s infinite ease-in-out;
+    filter: drop-shadow(0 0 8px rgba(255, 230, 80, 0.9));
+}
+
+/* Al pasar el mouse se agranda un poquito */
+.interactivo:hover {
+    filter: drop-shadow(0 0 18px rgba(255, 255, 120, 1));
+}
+
+/* Efecto de luz palpitante */
+@keyframes resplandor {
+    0% {
+        filter: drop-shadow(0 0 4px rgba(255, 230, 80, 0.5));
+    }
+
+    100% {
+        filter: drop-shadow(0 0 4px rgba(255, 230, 80, 0.5));
+    }
+}
+
+/* Botones laterales */
+.btn-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(190, 0, 0, 0.9);
+    color: white;
+    font-size: 38px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 60;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+}
+
+.btn-nav:hover {
+    background: red;
+}
+
+.btn-atras {
+    left: 25px;
+}
+
+.btn-siguiente {
+    right: 25px;
+}
+
+/* Mensaje de ayuda */
+.ayuda-tocar {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.45);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: normal;
+    z-index: 60;
+}

@@ -5,42 +5,73 @@ import ytIcon from "../assets/icon-youtube.png";
 
 function Footer() {
   return (
-    <footer className="seccion-pie mt-4 pt-3 pb-4">
-      <div className="container">
-        <div className="row justify-content-center text-white">
-          <div className="col-11 col-md-6">
+    <footer className="seccion-pie footer-khaopsy">
+      <div className="footer-capa">
+        <div className="footer-contenedor">
+          
+          <div className="footer-card">
+            <h2>Contáctanos</h2>
 
-            <p className="titulo-pie mb-1">CONTACTO: 305 3915570</p>
-
-            <p className="mb-3 texto-pie">
-              CORREO: Khaopsy@gmail.com
+            <p>
+              <span>📞</span>
+              Llámanos al 305 3915570
             </p>
 
-           
-            <div className="d-flex justify-content-center gap-4 iconos-pie">
-              
-              <a href="#" className="enlace-icono-pie">
-                <span className="circulo-icono-pie">
-                  <img src={igIcon} alt="Instagram" className="object-fit-contain imagen-icono-pie"style={{Width:"28px" , height:"28px"}} 
-                  />
-                </span>
-              </a>
+            <p>
+              <span>💬</span>
+              Escríbenos por WhatsApp
+            </p>
 
-              <a href="#" className="enlace-icono-pie">
-                <span className="circulo-icono-pie">
-                  <img src={waIcon} alt="WhatsApp" className="imagen-icono-pie"style={{Width:"28px" , height:"28px"}}  />
-                </span>
-              </a>
-
-              <a href="#" className="enlace-icono-pie">
-                <span className="circulo-icono-pie">
-                  <img src={ytIcon} alt="YouTube" className="imagen-icono-pie"style={{Width:"28px" , height:"28px"}}  />
-                </span>
-              </a>
-
-            </div>
-
+            <p>
+              <span>✉️</span>
+              Envíanos un correo electrónico
+            </p>
           </div>
+
+          <div className="footer-card footer-redes-card">
+            <h2>
+              Síguenos en <br />
+              nuestras redes
+            </h2>
+
+            <div className="footer-redes">
+              <a href="#" aria-label="WhatsApp">
+                <img src={waIcon} alt="WhatsApp" />
+              </a>
+
+              <a href="#" aria-label="Instagram">
+                <img src={igIcon} alt="Instagram" />
+              </a>
+
+              <a href="#" aria-label="YouTube">
+                <img src={ytIcon} alt="YouTube" />
+              </a>
+            </div>
+          </div>
+
+          <div className="footer-card">
+            <h2>Correo electrónico</h2>
+
+            <p>
+              Déjanos tu correo para recibir novedades del universo KHAOPSY.
+            </p>
+
+            <div className="footer-form">
+              <input
+                type="email"
+                placeholder="Introduce tu correo"
+              />
+
+              <button>
+                Enviar
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <div className="footer-copy">
+          © 2026 KHAOPSY. Proyecto transmedia.
         </div>
       </div>
     </footer>

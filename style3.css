@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: #2f2b2a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Contenedor principal de la viñeta */
+.container {
+    position: relative;
+    width: min(88vw, calc(82vh * 1.78));
+    height: min(82vh, calc(88vw / 1.78));
+    background-image: url("./img/vineta-3.svg");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+/* Animación data */
+#data {
+    position: absolute;
+    width: 80%;
+    left: 12%;
+    top: -18%;
+    z-index: 10;
+}
+
+/* Animación nene */
+#nene {
+    position: absolute;
+    width: 28%;
+    left: 37%;
+    top: 44%;
+    z-index: 12;
+}
+
+/* Animación papá */
+#pa {
+    position: absolute;
+    width: 75%;
+    right: 10%;
+    top: 41%;
+    z-index: 11;
+}
+
+/* Botones laterales */
+.btn-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(190, 0, 0, 0.9);
+    color: white;
+    font-size: 38px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 50;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+}
+
+.btn-nav:hover {
+    background: red;
+}
+
+.btn-atras {
+    left: 3%;
+}
+
+.btn-siguiente {
+    right: 3%;
+}
+
+/* Botón de audio con imagen */
+.btn-audio-img {
+    position: absolute;
+    right: 3%;
+    bottom: 4%;
+    width: 72px;
+    height: 72px;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    z-index: 80;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.7));
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.btn-audio-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.btn-audio-img:hover {
+    transform: scale(1.12);
+    filter: drop-shadow(0 0 14px rgba(255, 0, 0, 0.9));
+}
+
+/* Mensaje de ayuda */
+.ayuda-tocar {
+    position: absolute;
+    top: 4%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.45);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: normal;
+    z-index: 60;
+}
+
+/* Brillo suave para objetos interactivos */
+.interactivo {
+    cursor: pointer;
+    animation: brillo-suave 2.8s infinite ease-in-out;
+    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.30));
+}
+
+.interactivo:hover {
+    filter: drop-shadow(0 0 7px rgba(255, 255, 255, 0.55));
+}
+
+@keyframes brillo-suave {
+    0% {
+        filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.15));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 5px rgba(255, 245, 180, 0.32));
+    }
+
+    100% {
+        filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.15));
+    }
+}

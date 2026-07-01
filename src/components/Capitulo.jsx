@@ -1,79 +1,168 @@
-import { useParams, Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { useState } from "react";
 import comic from "../data/ComicData";
 import bannerNegro from "../assets/bannernegro.png";
 
 export default function Capitulo() {
   const { id } = useParams();
+  const navigate = useNavigate();
+
+  const [mostrarModal, setMostrarModal] = useState(false);
 
   const capitulo = comic.capitulos.find(
     (cap) => cap.id === Number(id)
   );
 
+  const volverAComic = () => {
+    navigate("/");
+
+    setTimeout(() => {
+      const seccionComic = document.getElementById("comic");
+
+      if (seccionComic) {
+        seccionComic.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }, 150);
+  };
+
+  const abrirModalReproducir = () => {
+    setMostrarModal(true);
+  };
+
+  const iniciarCapitulo = () => {
+    setMostrarModal(false);
+    navigate(`/video/${capitulo.id}`);
+  };
+
   if (!capitulo) {
-    return <h1>Capítulo no encontrado</h1>;
+    return (
+      <main className="capitulo-netflix-page">
+        <h1>Capítulo no encontrado</h1>
+      </main>
+    );
   }
 
   return (
-    <>
-      <button
-        className="btn btn-danger m-3"
-        onClick={() => window.history.back()}
-      >
-        ← Atrás
-      </button>
-
-      <div
-        className="banner-capitulo"
+    <main className="capitulo-netflix-page">
+      <section
+        className="capitulo-hero"
         style={{
           backgroundImage: `url(${capitulo.imgPortada})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
         }}
       >
-        <div className="overlay-capitulo">
-          <div className="numero-capitulo">
-            {capitulo.id}
-          </div>
+        <div className="capitulo-hero-capa"></div>
+
+        <button
+          className="capitulo-boton-atras"
+          onClick={volverAComic}
+        >
+          ← Volver
+        </button>
+
+        <div className="capitulo-hero-info">
+          <span className="capitulo-etiqueta">
+            CAPÍTULO {capitulo.id}
+          </span>
 
           <h1>{capitulo.nombreCap}</h1>
 
           <p>{capitulo.descripcion}</p>
 
-          <button className="btn-reproducir">
-            Reproducir
-          </button>
+          <div className="capitulo-acciones">
+            <button
+              type="button"
+              className="capitulo-boton-play"
+              onClick={abrirModalReproducir}
+            >
+              ▶ Reproducir
+            </button>
+
+            <Link
+              to="/"
+              className="capitulo-boton-secundario"
+            >
+              Volver al inicio
+            </Link>
+          </div>
         </div>
-      </div>
+      </section>
 
       <section
-        className="lista-capitulos"
+        className="capitulos-netflix-lista"
         style={{
-          backgroundImage: `url(${bannerNegro})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
+          "--fondo-capitulos": `url(${bannerNegro})`,
         }}
       >
-        <h2>Capítulos:</h2>
+        <div className="capitulos-titulo-area">
+          <span>EXPLORA LA HISTORIA</span>
+          <h2>Capítulos</h2>
+        </div>
 
-        <div className="row">
+        <div className="capitulos-scroll">
           {comic.capitulos.map((cap) => (
-            <div key={cap.id} className="col-md-2">
-              <Link to={`/capitulo/${cap.id}`}>
-                <img
-                  src={cap.imgPortada}
-                  alt={cap.nombreCap}
-                  className="miniatura-capitulo"
-                />
+            <Link
+              key={cap.id}
+              to={`/capitulo/${cap.id}`}
+              className={
+                cap.id === capitulo.id
+                  ? "capitulo-card-netflix activo"
+                  : "capitulo-card-netflix"
+              }
+            >
+              <div className="capitulo-mini-img">
+                <img src={cap.imgPortada} alt={cap.nombreCap} />
 
-                <h5 className="nom">
-                  {cap.id}. {cap.nombreCap}
-                </h5>
-              </Link>
-            </div>
+                <div className="capitulo-mini-capa"></div>
+
+                <span className="capitulo-mini-numero">
+                  {cap.id}
+                </span>
+
+                <span className="capitulo-mini-play">
+                  ▶
+                </span>
+              </div>
+
+              <div className="capitulo-mini-info">
+                <h3>{cap.nombreCap}</h3>
+                <p>{cap.descripcion}</p>
+              </div>
+            </Link>
           ))}
         </div>
       </section>
-    </>
+
+      {mostrarModal && (
+        <div className="modal-interactivo-fondo">
+          <div className="modal-interactivo-card">
+            <button
+              className="modal-interactivo-cerrar"
+              onClick={() => setMostrarModal(false)}
+            >
+              ×
+            </button>
+
+            
+
+            <h2>Antes de comenzar</h2>
+
+            <p>
+              “En cada escena de Líbralos del Mal podrás interactuar con los
+              elementos dando clic. Explora, descubre y vive la historia.”
+            </p>
+
+            <button
+              className="modal-interactivo-boton"
+              onClick={iniciarCapitulo}
+            >
+              Entendido, iniciar
+            </button>
+          </div>
+        </div>
+      )}
+    </main>
   );
 }

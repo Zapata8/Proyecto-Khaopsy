@@ -1,5 +1,4 @@
-
-import React from "react";
+import React, { useState } from "react";
 
 export default function CarruselPersonajes({
   personajeKael,
@@ -8,82 +7,105 @@ export default function CarruselPersonajes({
   personajeSandy,
   personajeSt,
 }) {
+  const personajes = [
+    {
+      nombre: "Kael",
+      rol: "Protagonista",
+      imagen: personajeKael,
+      descripcion:
+        "Un hombre atrapado entre la fe, el miedo y las consecuencias de sus propias decisiones.",
+    },
+    {
+      nombre: "Kyle",
+      rol: "Hijo de Kael",
+      imagen: personajeKyle,
+      descripcion:
+        "Un niño que representa la inocencia dentro de una historia marcada por el caos y la incertidumbre.",
+    },
+    {
+      nombre: "Pedro",
+      rol: "Pastor",
+      imagen: personajePadre,
+      descripcion:
+        "Una figura ligada a las creencias, las advertencias y la interpretación de los sucesos apocalípticos.",
+    },
+    {
+      nombre: "Sandy",
+      rol: "Esposa de Kael",
+      imagen: personajeSandy,
+      descripcion:
+        "Un personaje clave en la vida de Kael y en el conflicto familiar que atraviesa la historia.",
+    },
+    {
+      nombre: "Satanás",
+      rol: "Presencia oscura",
+      imagen: personajeSt,
+      descripcion:
+        "La representación del miedo, la tentación y la oscuridad que persigue a los personajes.",
+    },
+  ];
+
+  const [personajeActivo, setPersonajeActivo] = useState(0);
+
+  const personaje = personajes[personajeActivo];
+
+  const siguiente = () => {
+    setPersonajeActivo((personajeActivo + 1) % personajes.length);
+  };
+
+  const anterior = () => {
+    setPersonajeActivo(
+      personajeActivo === 0 ? personajes.length - 1 : personajeActivo - 1
+    );
+  };
+
   return (
     <>
-      <div className="encabezado-seccion d-flex h2 justify-content-center  text-white text-center py-1">
+      <span id="personajes" className="ancla-navbar"></span>
+
+      <div className="encabezado-seccion d-flex h2 justify-content-center text-white text-center py-1">
         PERSONAJES
       </div>
 
-      <section className="seccion-personajes p-3 mb-4 bg-black  text-white rounded">
-        
+      <section className="personajes-showcase">
+        <div className="personajes-contenido">
+          <div className="personajes-info">
+            <span className="personajes-label">PERSONAJE</span>
 
-        <div id="carruselPersonajes" className="carousel slide" data-bs-ride="false">
-          <div className="carousel-inner text-center">
-            <div className="carousel-item active">
-              <img
-                src={personajeKael}
-                className="d-block mx-auto rounded"
-                alt="Kael"
-                style={{ width: 450, height: 450, objectFit: "cover" }}
-              />
-            </div>
+            <h2>{personaje.nombre}</h2>
 
-            <div className="carousel-item">
-              <img
-                src={personajeKyle}
-                className="d-block mx-auto rounded"
-                alt="Kyle"
-                style={{ width: 450, height: 450, objectFit: "cover" }}
-              />
-            </div>
+            <h4>{personaje.rol}</h4>
 
-            <div className="carousel-item">
-              <img
-                src={personajePadre}
-                className="d-block mx-auto rounded"
-                alt="Padre"
-                style={{ width: 450, height: 450, objectFit: "cover" }}
-              />
-            </div>
+            <p>{personaje.descripcion}</p>
 
-            <div className="carousel-item">
-              <img
-                src={personajeSandy}
-                className="d-block mx-auto rounded"
-                alt="Sandy"
-           style={{ width: 450, height: 450, objectFit: "cover" }}
-              />
-            </div>
-
-            <div className="carousel-item">
-              <img
-                src={personajeSt}
-                className="d-block mx-auto rounded"
-                alt="ST"
-               style={{ width: 450, height: 450, objectFit: "cover" }}
-              />
+            <div className="personajes-botones">
+              <button onClick={anterior}>← Anterior</button>
+              <button onClick={siguiente}>Siguiente →</button>
             </div>
           </div>
 
-          <button
-            className="carousel-control-prev"
-            type="button"
-            data-bs-target="#carruselPersonajes"
-            data-bs-slide="prev"
-          >
-            <span className="carousel-control-prev-icon" aria-hidden="true" />
-            <span className="visually-hidden">Previous</span>
-          </button>
+          <div className="personajes-imagen-principal">
+            <div className="circulo-rojo"></div>
 
-          <button
-            className="carousel-control-next"
-            type="button"
-            data-bs-target="#carruselPersonajes"
-            data-bs-slide="next"
-          >
-            <span className="carousel-control-next-icon" aria-hidden="true" />
-            <span className="visually-hidden">Next</span>
-          </button>
+            <img src={personaje.imagen} alt={personaje.nombre} />
+          </div>
+        </div>
+
+        <div className="personajes-miniaturas">
+          {personajes.map((item, index) => (
+            <button
+              key={index}
+              className={
+                personajeActivo === index
+                  ? "miniatura-personaje activa"
+                  : "miniatura-personaje"
+              }
+              onClick={() => setPersonajeActivo(index)}
+            >
+              <img src={item.imagen} alt={item.nombre} />
+              <span>{item.nombre}</span>
+            </button>
+          ))}
         </div>
       </section>
     </>

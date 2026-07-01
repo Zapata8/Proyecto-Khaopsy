@@ -8,44 +8,48 @@ function MembersSection() {
     <section id="integrantes" className="members-section">
       <SectionHeader title="CREADORES" />
 
-      <div className="container mt-4 members-wrapper">
-        <div className="row justify-content-center">
+      <div className="creadores-wrapper">
+        <div className="creadores-intro">
+          <span>DETRÁS DE KHAOPSY</span>
 
-         
-          <div className="col-12 col-md-5 text-center mb-4 mb-md-0">
-            
-            <div className="mb-4">
-              <h5 className="mb-2">Juan Jose</h5>
-              <img
-                src={juanJose}
-                alt="Juan Jose"
-                className=" miembro-foto"
-              />
+          <h2>
+           Los creadores del caos
+          </h2>
+
+          <p>
+            Somos dos adolescentes que estudian Producción de Multimedia en el
+            SENA. Creamos “KHAOPSY”, un proyecto transmedia que retrata el
+            apocalipsis desde una mirada cruda, visual y realista.
+          </p>
+
+          <p>
+            A través de imágenes, narrativa y contenido digital, buscamos
+            generar conciencia sobre los posibles colapsos sociales y
+            espirituales que enfrenta la humanidad.
+          </p>
+        </div>
+
+        <div className="creadores-grid">
+          <div className="creador-perfil">
+            <div className="creador-foto-box">
+              <img src={juanJose} alt="Juan José" />
             </div>
 
-            
-            <div>
-              <h5 className="mb-2">Juan Sebastian</h5>
-              <img
-                src={juanSebastian}
-                alt="Juan Sebastian"
-                className=" miembro-foto"
-              />
+            <div className="creador-datos">
+              <span>CREADOR</span>
+              <h3>Juan José</h3>
             </div>
           </div>
 
-          
-          <div className="col-12 col-md-5 d-flex align-items-center">
-            <p className=" fs-4    miembro-descripcion">
-              Somos dos adolescentes que estudian Producción de Multimedia en el SENA.
-              Comprometidos con contar historias profundas y provocadoras, creamos
-              “KHAOPSY”, un proyecto transmedia que retrata el apocalipsis de forma
-              cruda y realista. A través de imágenes, narrativa y contenido digital,
-              buscamos generar conciencia sobre los posibles colapsos sociales y
-              espirituales que enfrenta la humanidad. Nuestro enfoque explora cómo la
-              psicología y la fe influyen en las decisiones humanas durante momentos de
-              crisis extremas.
-            </p>
+          <div className="creador-perfil creador-perfil-derecha">
+            <div className="creador-foto-box">
+              <img src={juanSebastian} alt="Juan Sebastián" />
+            </div>
+
+            <div className="creador-datos">
+              <span>CREADOR</span>
+              <h3>Juan Sebastián</h3>
+            </div>
           </div>
         </div>
       </div>

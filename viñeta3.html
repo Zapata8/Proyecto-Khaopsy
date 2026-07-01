@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viñeta 3 - Cómic digital interactivo</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Botón audio con imagen -->
+        <button class="btn-audio-img" onclick="reproducirAudio()" type="button">
+            <img src="/src/assets/boton.png" alt="Reproducir audio">
+        </button>
+
+        <!-- Audio de esta viñeta -->
+        <audio id="audioComic">
+            <source src="img/3.mp3" type="audio/mpeg">
+            Tu navegador no soporta audio.
+        </audio>
+
+        <!-- Animaciones Lottie -->
+        <div id="data" class="interactivo"></div>
+        <div id="nene" class="interactivo"></div>
+        <div id="pa" class="interactivo"></div>
+
+    </div>
+
+    <!-- Librería Lottie -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.13.0/lottie.min.js"></script>
+
+    <script>
+        const dataAnimado = lottie.loadAnimation({
+            container: document.getElementById("data"),
+            renderer: "svg",
+            loop: false,
+            autoplay: false,
+            path: "img/data.json"
+        });
+
+        const neneAnimado = lottie.loadAnimation({
+            container: document.getElementById("nene"),
+            renderer: "svg",
+            loop: false,
+            autoplay: false,
+            path: "img/nene.json"
+        });
+
+        const paAnimado = lottie.loadAnimation({
+            container: document.getElementById("pa"),
+            renderer: "svg",
+            loop: false,
+            autoplay: false,
+            path: "img/pa.json"
+        });
+
+        function activarAnimacion(id, animacion) {
+            const elemento = document.getElementById(id);
+
+            elemento.addEventListener("click", function () {
+                animacion.stop();
+                animacion.play();
+            });
+        }
+
+        activarAnimacion("data", dataAnimado);
+        activarAnimacion("nene", neneAnimado);
+        activarAnimacion("pa", paAnimado);
+
+        // Reproducir audio con imagen
+      function reproducirAudio() {
+    const audio = document.getElementById("audioComic");
+
+    if (audio.paused) {
+        audio.play();
+    } else {
+        audio.pause();
+    }
+}
+
+        // Ir a la siguiente viñeta
+        function avanzar() {
+            window.location.href = "viñeta4.html";
+        }
+
+        // Volver a la viñeta anterior
+        function retroceder() {
+            window.location.href = "viñeta2.html";
+        }
+    </script>
+
+</body>
+</html>

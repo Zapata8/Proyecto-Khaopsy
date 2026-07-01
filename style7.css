@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: #2f2b2a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Tamaño general de la viñeta */
+:root {
+    --escala-vineta: 0.60;
+}
+
+/* Contenedor principal */
+.container7 {
+    position: relative;
+    width: 1400px;
+    height: 787px;
+    overflow: hidden;
+    transform: scale(var(--escala-vineta));
+    transform-origin: center;
+}
+
+/* Fondo SVG */
+.fondo7 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1400px;
+    height: 787px;
+    z-index: 1;
+}
+
+.fondo7 svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Animación ciclo Kael */
+#ciclokael {
+    position: absolute;
+    left: 500px;
+    top: 200px;
+    width: 2500px;
+    height: 620px;
+    z-index: 10;
+    cursor: pointer;
+    overflow: visible;
+    transform: scale(1.80);
+    transform-origin: center center;
+}
+/* Botón de audio con imagen */
+.btn-audio-img {
+    position: absolute;
+    right: 15px;
+    bottom: 40px;
+    width: 105px;
+    height: 105px;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    z-index: 90;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.7));
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.btn-audio-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.btn-audio-img:hover {
+    transform: scale(1.12);
+    filter: drop-shadow(0 0 14px rgba(255, 0, 0, 0.9));
+}
+
+/* Objetos interactivos */
+.interactivo {
+    cursor: pointer;
+    animation: resplandor 1.8s infinite ease-in-out;
+    filter: drop-shadow(0 0 8px rgba(255, 230, 80, 0.9));
+}
+
+/* Al pasar el mouse se agranda un poquito */
+.interactivo:hover {
+    filter: drop-shadow(0 0 18px rgba(255, 255, 120, 1));
+}
+
+/* Efecto de luz palpitante */
+@keyframes resplandor {
+    0% {
+        filter: drop-shadow(0 0 4px rgba(255, 230, 80, 0.5));
+    }
+
+    100% {
+        filter: drop-shadow(0 0 4px rgba(255, 230, 80, 0.5));
+    }
+}
