@@ -1,5 +1,5 @@
 import React from "react";
-import patronRojo from "../assets/patron-rojo.png";
+import patronRojo from "/assets/patron-rojo.png";
 
 function NavBar({ logoPequeno }) {
   const irASeccion = (id) => {

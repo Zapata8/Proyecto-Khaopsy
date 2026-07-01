@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SectionHeader from "./SectionHeader";
-import teaserImg from "../assets/teaser.jpg";
-import teaserVideo from "../assets/teaserfinal.mp4";
+import teaserImg from "/assets/teaser.jpg";
+import teaserVideo from "/assets/teaserfinal.mp4";
 
 function TeaserSection() {
   const [verVideo, setVerVideo] = useState(false);

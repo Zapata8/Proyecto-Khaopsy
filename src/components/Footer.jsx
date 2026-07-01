@@ -1,7 +1,7 @@
 import React from "react";
-import igIcon from "../assets/icon-instagram.png";
-import waIcon from "../assets/icon-whatsapp.png";
-import ytIcon from "../assets/icon-youtube.png";
+import igIcon from "/assets/icon-instagram.png";
+import waIcon from "/assets/icon-whatsapp.png";
+import ytIcon from "/assets/icon-youtube.png";
 
 function Footer() {
   return (

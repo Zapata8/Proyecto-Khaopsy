@@ -1,7 +1,7 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import comic from "../data/ComicData";
-import bannerNegro from "../assets/bannernegro.png";
+const bannerNegro = "/assets/bannernegro.png";
 
 export default function Capitulo() {
   const { id } = useParams();
@@ -144,8 +144,6 @@ export default function Capitulo() {
             >
               ×
             </button>
-
-            
 
             <h2>Antes de comenzar</h2>
 

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import cartIcon from "../assets/carrito.png";
+import cartIcon from "/assets/carrito.png";
 import { CarritoContext } from "../context/CarritoContext";
 
 function ProductCard({ title, description, price, image }) {

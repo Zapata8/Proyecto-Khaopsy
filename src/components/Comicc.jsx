@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import comic from "../data/ComicData";
-import bannerNegro from "../assets/bannernegro.png";
+import bannerNegro from "/assets/bannernegro.png";
 
 export default function Comic() {
   const capituloPrincipal = comic.capitulos[0];

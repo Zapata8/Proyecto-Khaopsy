@@ -1,5 +1,5 @@
 import React from "react";
-import angel from "../assets/angel.png";
+import angel from "/assets/angel.png";
 
 function SeccionIdea() {
   return (

@@ -3,20 +3,20 @@ import { Link } from "react-router-dom";
 import { CarritoContext } from "./context/CarritoContext";
 
 
-import angelImg from "./assets/angel.png";
-import fondoNegro from "./assets/fondonegro.png";
-import logoPequeno from "./assets/logopequeño.png";
+import angelImg from "/assets/angel.png";
+import fondoNegro from "/assets/fondonegro.png";
+import logoPequeno from "/assets/logopequeño.png";
 
-import personajeKael from "./assets/personaje-kael.png";
-import personajeKyle from "./assets/personaje.kyle.png";
-import personajePadre from "./assets/personaje.padre.png";
-import personajeSandy from "./assets/personaje.sandy.png";
-import personajeSt from "./assets/personaje.st.png";
+import personajeKael from "/assets/personaje-kael.png";
+import personajeKyle from "/assets/personaje.kyle.png";
+import personajePadre from "/assets/personaje.padre.png";
+import personajeSandy from "/assets/personaje.sandy.png";
+import personajeSt from "/assets/personaje.st.png";
 
 
-import escenarioExortacion from "./assets/escenario-exortacion.png";
-import habitacionConLuz from "./assets/habitacion-con-luz-png.png";
-import habitacionExortacion from "./assets/habitacion-exortacion.png";
+import escenarioExortacion from "/assets/escenario-exortacion.png";
+import habitacionConLuz from "/assets/habitacion-con-luz-png.png";
+import habitacionExortacion from "/assets/habitacion-exortacion.png";
 
 
 import NavBar from "./components/NavBar.jsx";

@@ -1,10 +1,10 @@
-import banner from "../assets/bannernegro.png";
+import banner from "/assets/bannernegro.png";
 
-import cap1 from "../assets/cap1.png";
-import cap2 from "../assets/cap2.png";
-import cap3 from "../assets/cap3.png";
-import cap4 from "../assets/cap4.png";
-import cap5 from "../assets/cap5.png";
+import cap1 from "/assets/cap1.png";
+import cap2 from "/assets/cap2.png";
+import cap3 from "/assets/cap3.png";
+import cap4 from "/assets/cap4.png";
+import cap5 from "/assets/cap5.png";
 
 const comic = {
   nombreComic: "Libralos del mal",

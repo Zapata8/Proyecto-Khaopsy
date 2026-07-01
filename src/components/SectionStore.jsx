@@ -3,9 +3,9 @@ import SectionHeader from "./SectionHeader.jsx";
 import ProductCard from "./ProductCard.jsx";
 
 
-import hoodieImg from "../assets/product-hoodie.png";
-import phoneCaseImg from "../assets/product-phonecase.png";
-import maskImg from "../assets/product-mask.png";
+import hoodieImg from "/assets/product-hoodie.png";
+import phoneCaseImg from "/assets/product-phonecase.png";
+import maskImg from "/assets/product-mask.png";
 
 
 function SectionStore() {

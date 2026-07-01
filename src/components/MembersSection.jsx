@@ -1,7 +1,7 @@
 import React from "react";
 import SectionHeader from "./SectionHeader.jsx";
-import juanJose from "../assets/juan-jose.jpg";
-import juanSebastian from "../assets/juan-sebastian.jpg";
+import juanJose from "/assets/juan-jose.jpg";
+import juanSebastian from "/assets/juan-sebastian.jpg";
 
 function MembersSection() {
   return (
