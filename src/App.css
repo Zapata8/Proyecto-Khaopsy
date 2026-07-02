@@ -3772,3 +3772,68 @@ html {
         transform: scale(1);
     }
 }
+
+/* RESPONSIVE NUESTRO PROYECTO */
+@media screen and (max-width: 768px) {
+    .seccion-proyecto {
+        min-height: auto;
+        padding: 35px 18px 60px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .contenedor-textos-proyecto {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .caja-texto-proyecto {
+        width: 100%;
+        max-width: 92%;
+        padding: 24px 22px;
+        border-radius: 18px;
+        background: rgba(120, 0, 0, 0.78);
+        border: 1px solid red;
+        box-shadow: 0 0 18px rgba(255, 0, 0, 0.35);
+    }
+
+    .caja-texto-proyecto p {
+        font-size: 16px;
+        line-height: 1.6;
+        text-align: left;
+        word-spacing: normal;
+        letter-spacing: normal;
+        color: white;
+        margin: 0;
+    }
+
+    .encabezado-seccion {
+        padding: 10px 12px !important;
+    }
+
+    .encabezado-seccion h2,
+    .encabezado-seccion-titulo {
+        font-size: 26px !important;
+        line-height: 1.1;
+        text-align: center;
+    }
+
+    .boton-carrito-fijo {
+        width: 62px;
+        height: 62px;
+        right: 15px;
+        bottom: 18px;
+    }
+
+    .boton-carrito-fijo img {
+        width: 38px;
+        height: 38px;
+        object-fit: contain;
+    }
+}
