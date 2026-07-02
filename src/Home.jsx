@@ -221,7 +221,7 @@ export default function Home() {
 
 <img
 
-src="/src/assets/carrito.png"
+src="/assets/carrito.png"
 
 alt="Carrito"
 
