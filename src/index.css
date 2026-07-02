@@ -61,7 +61,7 @@ button:focus-visible {
 }
 
 .encabezado-seccion {
-  background-image: url("./assets/header-bg.png");
+  background-image: url("/assets/header-bg.png");
   background-repeat: repeat-x;
   background-size: cover;
   background-position: center;
