@@ -18,8 +18,7 @@ body {
     min-height: 100vh;
 }
 
-/* Tamaño general de la viñeta */
-/* Tamaño general de la viñeta */
+/* Escala general */
 :root {
     --escala-vineta: 0.66;
 }
@@ -30,12 +29,13 @@ body {
     width: 1400px;
     height: 787px;
     overflow: hidden;
-    background-image: url("./img/viñeta2.svg");
+    background-image: url("/img/viñeta2.svg");
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
-    transform: scale(var(--escala-vineta));
-    transform-origin: center;
+
+    zoom: var(--escala-vineta);
+    transform: none;
 }
 
 /* Ojos del niño */
@@ -112,37 +112,7 @@ body {
     filter: drop-shadow(0 0 18px rgba(255, 255, 120, 1));
 }
 
-/* Botones laterales */
-.btn-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 58px;
-    height: 58px;
-    border-radius: 50%;
-    border: none;
-    background: rgba(190, 0, 0, 0.9);
-    color: white;
-    font-size: 38px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 60;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.35);
-}
-
-.btn-nav:hover {
-    background: red;
-}
-
-.btn-atras {
-    left: 25px;
-}
-
-.btn-siguiente {
-    right: 25px;
-}
-
-/* Botón de audio con imagen */
+/* Botón de audio */
 .btn-audio-img {
     position: absolute;
     right: 120px;
@@ -158,10 +128,10 @@ body {
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.7));
     transition: transform 0.25s ease, filter 0.25s ease;
 }
+
 .btn-audio-img img {
     width: 100%;
     height: 100%;
-    
     object-fit: contain;
     display: block;
 }
@@ -186,24 +156,58 @@ body {
     z-index: 60;
 }
 
-.interactivo {
-    cursor: pointer;
-    animation: resplandor 1.8s infinite ease-in-out;
-    filter: drop-shadow(0 0 8px rgba(255, 230, 80, 0.9));
-}
-
-/* Al pasar el mouse se agranda un poquito */
-.interactivo:hover {
-    filter: drop-shadow(0 0 18px rgba(255, 255, 120, 1));
-}
-
-/* Efecto de luz palpitante */
+/* Efecto de luz */
 @keyframes resplandor {
     0% {
         filter: drop-shadow(0 0 4px rgba(255, 230, 80, 0.5));
     }
 
+    50% {
+        filter: drop-shadow(0 0 10px rgba(255, 230, 80, 0.9));
+    }
+
     100% {
         filter: drop-shadow(0 0 4px rgba(255, 230, 80, 0.5));
+    }
+}
+
+/* TABLET */
+@media screen and (max-width: 1024px) {
+    :root {
+        --escala-vineta: 0.52;
+    }
+}
+
+/* CELULAR HORIZONTAL */
+@media screen and (max-width: 900px) and (orientation: landscape) {
+    :root {
+        --escala-vineta: 0.46;
+    }
+
+    body {
+        align-items: center;
+    }
+}
+
+/* CELULAR VERTICAL */
+@media screen and (max-width: 600px) and (orientation: portrait) {
+    :root {
+        --escala-vineta: 0.28;
+    }
+
+    body {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container {
+        transform-origin: center center;
+    }
+}
+
+/* CELULAR MUY PEQUEÑO */
+@media screen and (max-width: 380px) and (orientation: portrait) {
+    :root {
+        --escala-vineta: 0.24;
     }
 }

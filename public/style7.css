@@ -16,6 +16,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    overflow: hidden;
 }
 
 /* Tamaño general de la viñeta */
@@ -29,10 +30,10 @@ body {
     width: 1400px;
     height: 787px;
     overflow: hidden;
-    transform: scale(var(--escala-vineta));
-    transform-origin: center;
-}
 
+    zoom: var(--escala-vineta);
+    transform: none;
+}
 /* Fondo SVG */
 .fondo7 {
     position: absolute;
@@ -62,6 +63,7 @@ body {
     transform: scale(2.40);
     transform-origin: center center;
 }
+
 /* Botón de audio con imagen */
 .btn-audio-img {
     position: absolute;
@@ -98,18 +100,82 @@ body {
     filter: drop-shadow(0 0 8px rgba(255, 230, 80, 0.9));
 }
 
-/* Al pasar el mouse se agranda un poquito */
 .interactivo:hover {
     filter: drop-shadow(0 0 18px rgba(255, 255, 120, 1));
 }
 
-/* Efecto de luz palpitante */
+/* Efecto de luz */
 @keyframes resplandor {
     0% {
         filter: drop-shadow(0 0 4px rgba(255, 230, 80, 0.5));
     }
 
+    50% {
+        filter: drop-shadow(0 0 10px rgba(255, 230, 80, 0.9));
+    }
+
     100% {
         filter: drop-shadow(0 0 4px rgba(255, 230, 80, 0.5));
+    }
+}
+
+/* TABLET */
+@media screen and (max-width: 1024px) {
+    :root {
+        --escala-vineta: 0.50;
+    }
+}
+
+/* CELULAR HORIZONTAL */
+@media screen and (max-width: 900px) and (orientation: landscape) {
+    :root {
+        --escala-vineta: 0.45;
+    }
+
+    body {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-audio-img {
+        right: 25px;
+        bottom: 45px;
+        width: 95px;
+        height: 95px;
+    }
+}
+
+/* CELULAR VERTICAL */
+@media screen and (max-width: 600px) and (orientation: portrait) {
+    :root {
+        --escala-vineta: 0.28;
+    }
+
+    body {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container7 {
+        transform-origin: center center;
+    }
+
+    .btn-audio-img {
+        right: 25px;
+        bottom: 45px;
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* CELULAR MUY PEQUEÑO */
+@media screen and (max-width: 380px) and (orientation: portrait) {
+    :root {
+        --escala-vineta: 0.24;
+    }
+
+    .btn-audio-img {
+        width: 115px;
+        height: 115px;
     }
 }
