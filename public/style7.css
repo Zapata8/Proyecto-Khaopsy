@@ -52,14 +52,14 @@ body {
 /* Animación ciclo Kael */
 #ciclokael {
     position: absolute;
-    left: 500px;
+    left: 640px;
     top: 200px;
     width: 2500px;
     height: 620px;
     z-index: 10;
     cursor: pointer;
     overflow: visible;
-    transform: scale(1.80);
+    transform: scale(2.40);
     transform-origin: center center;
 }
 /* Botón de audio con imagen */

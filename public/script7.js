@@ -1,23 +1,12 @@
-const lamparaAnimada = lottie.loadAnimation({
-    container: document.getElementById("lampara"),
+const ciclokael = lottie.loadAnimation({
+    container: document.getElementById("ciclokael"),
     renderer: "svg",
     loop: false,
     autoplay: false,
-    path: "img/lampara.json"
+    path: "./img/ciclokael.json"
 });
 
-document.getElementById("lampara").addEventListener("click", function () {
-    lamparaAnimada.stop();
-    lamparaAnimada.play();
+document.getElementById("ciclokael").addEventListener("click", () => {
+    ciclokael.stop();
+    ciclokael.play();
 });
-
-// Reproducir / pausar audio con imagen
-function reproducirAudio() {
-    const audio = document.getElementById("audioComic");
-
-    if (audio.paused) {
-        audio.play();
-    } else {
-        audio.pause();
-    }
-}
